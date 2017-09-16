@@ -2,12 +2,16 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 //import the vue instance
 import Vue from 'vue'
+//import vue-material
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.css'
 //import the App component
 import App from './App'
 //import the vue router
 import VueRouter from 'vue-router'
 //tell vue to use the router
 Vue.use(VueRouter)
+Vue.use(VueMaterial)
     //import the hello component
 import Hello from './components/Hello'
 //import the about component
@@ -15,10 +19,11 @@ import About from './components/About'
 //import the param component
 import Param from './components/Param'
 import paramdetails from './components/paramdetails'
+import Auth from './components/Auth'
 //define your routes
 const routes = [
     //route for the home route of the web page
-    { path: '/', component: Hello },
+    { path: '/', component: Auth },
     //route for the about route of the web page
     { path: '/about', component: About },
     //route for the param route of the web page
@@ -77,3 +82,4 @@ new Vue({
         //pass in the router to the Vue instance
         router
     }).$mount('#app') //mount the router on the app
+    //use vue-material with vue
